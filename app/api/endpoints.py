@@ -19,7 +19,7 @@ class TranslationRequest(BaseModel):
 async def translate_text(request: TranslationRequest):
     try:
         completion = client.chat.completions.create(
-            model="llama-3.2-90b-vision-preview",
+            model="mistral-saba-24b",
             messages=[
                 {"role": "system", "content": "You are a professional translator. Your task is to translate English text to Hindi. Provide only the Hindi translation without any additional explanations or notes."},
                 {"role": "user", "content": f"Translate the following English text to Hindi: {request.text}"}
